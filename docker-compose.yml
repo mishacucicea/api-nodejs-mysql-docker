@@ -1,0 +1,25 @@
+version: '2.1'
+services:
+  database:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "companies"
+      MYSQL_ROOT_PASSWORD: "Passw0rd"
+      MYSQL_USER: user
+      MYSQL_PASSWORD: Passw0rd
+    healthcheck:
+      test: "/usr/bin/mysql --user=user --password=Passw0rd --execute \"SHOW DATABASES;\""
+      interval: 3s
+      timeout: 1s
+      retries: 5
+  application:
+    depends_on: [database]
+    links:
+      - database
+    build: .
+    ports:
+      - "8081:3000"
+    environment:
+      DB_URL: mysql://user:Passw0rd@database:3306/companies

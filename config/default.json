@@ -1,0 +1,16 @@
+{
+  "authExpiresIn": "7d",
+  "authSecret": "secret",
+  "port": 3000,
+  "log": {
+    "level": "debug",
+    "filename": "logs/api.log",
+    "maxFiles": 5,
+    "maxsize": 10240000
+  },
+  "version": "v1",
+  "db": {
+    "url" : "mysql://user:Passw0rd@localhost:3306/companies",
+    "options" : {}
+  }
+}

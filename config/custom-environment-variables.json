@@ -1,0 +1,13 @@
+{
+  "authExpiresIn": "AUTH_EXPIRES_IN",
+  "authSecret": "AUTH_SECRET",
+  "port": "PORT",
+  "log":{
+    "level": "LOG_LEVEL"
+  },
+  "version": "API_VERSION",
+  "db": {
+    "url" : "DB_URL",
+    "options" : {}
+  }
+}
